@@ -148,6 +148,14 @@ function field_to_ignore() {
 								</tr>
 
 								<tr valign="top">
+								<th scope="row">Cookieless tracking by using fingerprint.js (Universal Analytics only)</th>
+								<td>
+									<input type="radio" name="nkweb_fingerprintjs" value="true" <?php if (get_option('nkweb_fingerprintjs') == "true"){ echo "checked "; } ?>> Yes<br>
+									<input type="radio" name="nkweb_fingerprintjs" value="false"<?php if (get_option('nkweb_fingerprintjs') == "false"){ echo "checked "; } ?>>  No<br>	
+								</td>
+								</tr>
+
+								<tr valign="top">
 								<th scope="row">Use custom Google Analytics tracking code</th>
 								<td>
 									<input type="radio" name="nkweb_Use_Custom" value="true" <?php if (get_option('nkweb_Use_Custom') == "true"){ echo "checked "; } ?>> Yes<br>
@@ -158,14 +166,6 @@ function field_to_ignore() {
 								<tr valign="top">
 								<th scope="row">Custom Google Analytics tracking code</small></th>
 								<td><textarea name="nkweb_Custom_Code" ><?php echo get_option('nkweb_Custom_Code'); ?></textarea>
-								</tr>
-								
-								<tr valign="top">
-								<th scope="row">Cookieless tracking by using fingerprint.js</th>
-								<td>
-									<input type="radio" name="nkweb_fingerprintjs" value="true" <?php if (get_option('nkweb_fingerprintjs') == "true"){ echo "checked "; } ?>> Yes<br>
-									<input type="radio" name="nkweb_fingerprintjs" value="false"<?php if (get_option('nkweb_fingerprintjs') == "false"){ echo "checked "; } ?>>  No<br>	
-								</td>
 								</tr>
 
 								<tr valign="top">
