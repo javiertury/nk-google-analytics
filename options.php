@@ -156,6 +156,14 @@ function field_to_ignore() {
 								</tr>
 
 								<tr valign="top">
+								<th scope="row">Anonymize ip<br><small>(Only Universal analytics)</small></th>
+								<td>
+									<input type="radio" name="nkweb_anonymizeip" value="true" <?php if (get_option('nkweb_anonymizeip') == "true"){ echo "checked "; } ?>> Yes<br>
+									<input type="radio" name="nkweb_anonymizeip" value="false"<?php if (get_option('nkweb_anonymizeip') == "false"){ echo "checked "; } ?>>  No<br>	
+								</td>
+								</tr>
+
+								<tr valign="top">
 								<th scope="row">Use custom Google Analytics tracking code</th>
 								<td>
 									<input type="radio" name="nkweb_Use_Custom" value="true" <?php if (get_option('nkweb_Use_Custom') == "true"){ echo "checked "; } ?>> Yes<br>
@@ -175,8 +183,6 @@ function field_to_ignore() {
 									<input type="radio" name="nkweb_code_in_head" value="false"<?php if (get_option('nkweb_code_in_head') == "false"){ echo "checked "; } ?>>  End of the page<br>	
 								</td>
 								</tr>
-
-
 
 								<tr valign="top">
 								<th scope="row">NK Google Analytics Status</th>
