@@ -108,6 +108,28 @@ function field_to_ignore() {
 				        	<label class="nk-label" for="nkweb_id">Google Analytics ID:</label>
 				            <input type="text" name="nkweb_id" value="<?php echo get_option('nkweb_id'); ?>" />
 				        </div>
+				        <div id="eu-options" class="nk-tab-content">
+				            <table class="form-table">
+
+								<tr valign="top">
+								<th scope="row">Cookieless tracking with fingerprint.js<br><small>(Only Universal analytics)</small></th>
+								<td>
+									<input type="radio" name="nkweb_fingerprintjs" value="true" <?php if (get_option('nkweb_fingerprintjs') == "true"){ echo "checked "; } ?>> Yes<br>
+									<input type="radio" name="nkweb_fingerprintjs" value="false"<?php if (get_option('nkweb_fingerprintjs') == "false"){ echo "checked "; } ?>>  No<br>	
+								</td>
+								</tr>
+
+								<tr valign="top">
+								<th scope="row">Anonymize ip<br><small>(Only Universal analytics)</small></th>
+								<td>
+									<input type="radio" name="nkweb_anonymizeip" value="true" <?php if (get_option('nkweb_anonymizeip') == "true"){ echo "checked "; } ?>> Yes<br>
+									<input type="radio" name="nkweb_anonymizeip" value="false"<?php if (get_option('nkweb_anonymizeip') == "false"){ echo "checked "; } ?>>  No<br>	
+								</td>
+								</tr>
+
+							</table>
+
+				        </div>
 				        <div id="more-options" class="nk-tab-content">
 				            <table class="form-table">
 								<tr valign="top">
@@ -174,28 +196,6 @@ function field_to_ignore() {
 								<td>
 									<input type="radio" name="nkweb_Enable_GA" value="true" <?php if (get_option('nkweb_Enable_GA') == "true"){ echo "checked "; } ?>> On<br>
 									<input type="radio" name="nkweb_Enable_GA" value="false"<?php if (get_option('nkweb_Enable_GA') == "false"){ echo "checked "; } ?>>  Off <br>	
-								</td>
-								</tr>
-
-							</table>
-
-				        </div>
-				        <div id="eu-options" class="nk-tab-content">
-				            <table class="form-table">
-
-								<tr valign="top">
-								<th scope="row">Cookieless tracking with fingerprint.js<br><small>(Only Universal analytics)</small></th>
-								<td>
-									<input type="radio" name="nkweb_fingerprintjs" value="true" <?php if (get_option('nkweb_fingerprintjs') == "true"){ echo "checked "; } ?>> Yes<br>
-									<input type="radio" name="nkweb_fingerprintjs" value="false"<?php if (get_option('nkweb_fingerprintjs') == "false"){ echo "checked "; } ?>>  No<br>	
-								</td>
-								</tr>
-
-								<tr valign="top">
-								<th scope="row">Anonymize ip<br><small>(Only Universal analytics)</small></th>
-								<td>
-									<input type="radio" name="nkweb_anonymizeip" value="true" <?php if (get_option('nkweb_anonymizeip') == "true"){ echo "checked "; } ?>> Yes<br>
-									<input type="radio" name="nkweb_anonymizeip" value="false"<?php if (get_option('nkweb_anonymizeip') == "false"){ echo "checked "; } ?>>  No<br>	
 								</td>
 								</tr>
 
