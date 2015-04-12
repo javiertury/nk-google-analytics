@@ -123,7 +123,7 @@ function field_to_ignore() {
 								</tr>
 
 								<tr valign="top">
-								<th scope="row">Enable Display Advertising (Remarketing) :</th>
+								<th scope="row">Enable Display Advertising<br><small>(Remarketing)</small></th>
 								<td>
 									<input type="radio" name="nkweb_Display_Advertising" value="true" <?php if (get_option('nkweb_Display_Advertising') == "true"){ echo "checked "; } ?>> Yes<br>
 									<input type="radio" name="nkweb_Display_Advertising" value="false"<?php if (get_option('nkweb_Display_Advertising') == "false"){ echo "checked "; } ?>>  No <br>	
