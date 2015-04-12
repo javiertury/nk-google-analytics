@@ -277,7 +277,7 @@ function NKgoogleanalytics()
                     if ($nkweb_fingerprintjs=="true") {
                     	$tk .= "'storage': 'none', 'clientId': new Fingerprint().get() \n";
                     }
-                    $tk .= "}); \n"
+                    $tk .= "}); \n";
 
                     if ($Display_Advertising=="true") {
                         $tk .= "ga('require', 'displayfeatures'); \n";
