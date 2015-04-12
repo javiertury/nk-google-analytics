@@ -36,6 +36,7 @@ NK Google Analytics its simple, just add your Google Analytics ID and click "Sav
 * Track login and register page if you want to
 * Don't track logged users by role
 * Supports cookieless tracking using fingerprint.js
+* Can anonymize ip
 
 NK Google Analytics enables Google Analytics on all pages.
 
