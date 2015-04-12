@@ -148,7 +148,7 @@ function field_to_ignore() {
 								</tr>
 
 								<tr valign="top">
-								<th scope="row">Cookieless tracking by using fingerprint.js (Universal Analytics only)</th>
+								<th scope="row">Cookieless tracking with fingerprint.js<br><small>(Only Universal analytics)</small></th>
 								<td>
 									<input type="radio" name="nkweb_fingerprintjs" value="true" <?php if (get_option('nkweb_fingerprintjs') == "true"){ echo "checked "; } ?>> Yes<br>
 									<input type="radio" name="nkweb_fingerprintjs" value="false"<?php if (get_option('nkweb_fingerprintjs') == "false"){ echo "checked "; } ?>>  No<br>	
