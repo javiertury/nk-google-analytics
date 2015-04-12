@@ -136,6 +136,7 @@ function activate_NKgoogleanalytics()
     add_option('nkweb_Universal_Analytics', 'true');
     add_option('nkweb_Domain', $domain);
     add_option('nkweb_fingerprintjs', 'false');
+    add_option('nkweb_anonymizeip', 'false');
     add_option('nkweb_Use_Custom', 'false');
     add_option('nkweb_Custom_Code', '');
     add_option('nkweb_Enable_GA', 'true');  
@@ -157,6 +158,7 @@ function deactive_NKgoogleanalytics()
   delete_option('nkweb_Universal_Analytics');
   delete_option('nkweb_Domain');
   delete_option('nkweb_fingerprintjs');
+  delete_option('nkweb_anonymizeip');
   delete_option('nkweb_Use_Custom');
   delete_option('nkweb_Custom_Code');
   delete_option('nkweb_Enable_GA');
@@ -174,6 +176,7 @@ function admin_init_NKgoogleanalytics()
   register_setting('NKgoogleanalytics', 'nkweb_Universal_Analytics');
   register_setting('NKgoogleanalytics', 'nkweb_Domain');
   register_setting('NKgoogleanalytics', 'nkweb_fingerprintjs');
+  register_setting('NKgoogleanalytics', 'nkweb_anonymizeip');
   register_setting('NKgoogleanalytics', 'nkweb_Use_Custom');
   register_setting('NKgoogleanalytics', 'nkweb_Custom_Code');
   register_setting('NKgoogleanalytics', 'nkweb_Enable_GA');
@@ -204,6 +207,7 @@ function NKgoogleanalytics()
     $Universal_Analytics = get_option('nkweb_Universal_Analytics');
     $Domain = get_option('nkweb_Domain');
     $nkweb_fingerprintjs = get_option('nkweb_fingerprintjs');
+    $nkweb_anonymizeip = get_option('nkweb_anonymizeip');
     $nkweb_Use_Custom = get_option('nkweb_Use_Custom');
     $nkweb_Custom_Code = get_option('nkweb_Custom_Code');
     $nkweb_Enable_GA = get_option('nkweb_Enable_GA');
@@ -278,6 +282,10 @@ function NKgoogleanalytics()
                     	$tk .= "'storage': 'none', 'clientId': new Fingerprint().get() \n";
                     }
                     $tk .= "}); \n";
+
+                    if ($nkweb_anonymizeip=="true") {
+                    	$tk .= "ga('set', 'anonymizeIp', true); \n";
+                    }
 
                     if ($Display_Advertising=="true") {
                         $tk .= "ga('require', 'displayfeatures'); \n";
