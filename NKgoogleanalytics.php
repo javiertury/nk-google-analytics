@@ -62,7 +62,7 @@ add_action('admin_init','add_assets');
 
 function add_fingerprintjs()
 {
-    wp_enqueue_script('script_plugin',plugins_url( 'js/fingerprint.min.js' , __FILE__ ) );
+    wp_enqueue_script('script_fingerprintjs',plugins_url( 'js/fingerprint.min.js' , __FILE__ ) );
 }
 
 if (get_option('nkweb_fingerprintjs')=="true" && get_option('nkweb_Universal_Analytics')=="true") {
