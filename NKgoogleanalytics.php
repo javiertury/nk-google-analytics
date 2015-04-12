@@ -60,6 +60,14 @@ function add_assets()
 }
 add_action('admin_init','add_assets');
 
+function add_fingerprintjs()
+{
+    wp_enqueue_script('script_plugin',plugins_url( 'js/fingerprint.min.js' , __FILE__ ) );
+}
+
+if (get_option('nkweb_fingerprintjs')=="true") {
+    add_action('init','add_fingerprintjs');
+}
 
 /**
  *  Get evaluation code
@@ -127,6 +135,7 @@ function activate_NKgoogleanalytics()
     add_option('nkweb_track_login_and_register', 'false');  
     add_option('nkweb_Universal_Analytics', 'true');
     add_option('nkweb_Domain', $domain);
+    add_option('nkweb_fingerprintjs', 'false');
     add_option('nkweb_Use_Custom', 'false');
     add_option('nkweb_Custom_Code', '');
     add_option('nkweb_Enable_GA', 'true');  
@@ -147,6 +156,7 @@ function deactive_NKgoogleanalytics()
   delete_option('nkweb_track_login_and_register');
   delete_option('nkweb_Universal_Analytics');
   delete_option('nkweb_Domain');
+  delete_option('nkweb_fingerprintjs');
   delete_option('nkweb_Use_Custom');
   delete_option('nkweb_Custom_Code');
   delete_option('nkweb_Enable_GA');
@@ -163,6 +173,7 @@ function admin_init_NKgoogleanalytics()
   register_setting('NKgoogleanalytics', 'nkweb_track_login_and_register');
   register_setting('NKgoogleanalytics', 'nkweb_Universal_Analytics');
   register_setting('NKgoogleanalytics', 'nkweb_Domain');
+  register_setting('NKgoogleanalytics', 'nkweb_fingerprintjs');
   register_setting('NKgoogleanalytics', 'nkweb_Use_Custom');
   register_setting('NKgoogleanalytics', 'nkweb_Custom_Code');
   register_setting('NKgoogleanalytics', 'nkweb_Enable_GA');
@@ -192,6 +203,7 @@ function NKgoogleanalytics()
     $Display_Advertising = get_option('nkweb_Display_Advertising');
     $Universal_Analytics = get_option('nkweb_Universal_Analytics');
     $Domain = get_option('nkweb_Domain');
+    $nkweb_fingerprintjs = get_option('nkweb_fingerprintjs');
     $nkweb_Use_Custom = get_option('nkweb_Use_Custom');
     $nkweb_Custom_Code = get_option('nkweb_Custom_Code');
     $nkweb_Enable_GA = get_option('nkweb_Enable_GA');
@@ -261,7 +273,11 @@ function NKgoogleanalytics()
                     $tk .= "m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) \n";
                     $tk .= "})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); \n";
 
-                    $tk .= "ga('create', '" . $nkweb_id. "', '" . $Domain . "'); \n";
+                    $tk .= "ga('create', '" . $nkweb_id. "', '" . $Domain . "', { \n";
+                    if ($nkweb_fingerprintjs=="true") {
+                    	$tk .= "'storage': 'none', 'clientId': new Fingerprint().get() \n";
+                    }
+                    $tk .= "}); \n"
 
                     if ($Display_Advertising=="true") {
                         $tk .= "ga('require', 'displayfeatures'); \n";
