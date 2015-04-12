@@ -35,6 +35,7 @@ NK Google Analytics its simple, just add your Google Analytics ID and click "Sav
 * No tracking for admin users logged-in
 * Track login and register page if you want to
 * Don't track logged users by role
+* Supports cookieless tracking using fingerprint.js
 
 NK Google Analytics enables Google Analytics on all pages.
 
@@ -108,6 +109,10 @@ Yes.
 = What does "NK Google Analytics Status" option do? =
 
 This option can "turn off" the plugin, if is set to "on" the plugin will print tracking code in the web page, if not, the plugin will not insert the tracking code.
+
+= How accurate is cookieless tracking using fingerprint.js?
+
+It is ~90% accurate. The next version fingerprint2.js will be even better, but it is still in development at https://github.com/Valve/fingerprintjs2
 
 == Screenshots ==
 1. Modified settings panel with NK Google Analytics.
