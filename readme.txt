@@ -123,6 +123,13 @@ It is ~90% accurate. The next version fingerprint2.js will be even better, but i
 
 == Changelog ==
 
+= 1.4.9 =
+* Support for custom values, dimensions and metrics. Option to add some javascript code. Globally and per post/page.
+* Add option to use analytics.js built-in function to auto detect domain
+* Add original fingerprint.js because of license
+* Minor layout changes
+* Minor code fixes
+
 = 1.4.8 =
 * Added missing file
 * Minor code fixes
